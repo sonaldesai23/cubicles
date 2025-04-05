@@ -4,19 +4,21 @@
 import java.util.*;
 
 public class prb2 {
-   public static void main(String[] args) {
-       Scanner sc = new Scanner(System.in);
-       System.out.println("Enter a decimal number: ");
-       int num = sc.nextInt();
-
-       int quot = num % 2;
-
-       for(num = num; num > 0; num = num / 2) {
-           quot = num % 2;
-           System.out.print(quot);
-       }
-       
-       System.out.println(" Binary form of " + num + " is:" + quot);
-       sc.close(); 
-   } 
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter a decimal number: ");
+            int num = sc.nextInt();
+            int original = num;
+            
+            String binary = "";
+            
+            while (num > 0) {
+                int remainder = num % 2;
+                binary = remainder + binary;
+                num = num / 2;
+            }
+            
+            System.out.println("Binary form of " + original + " is: " + binary);
+        }
+    }
 }
