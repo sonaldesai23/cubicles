@@ -7,9 +7,16 @@ public class prb2 {
    public static void main(String[] args) {
        Scanner sc = new Scanner(System.in);
        System.out.println("Enter a decimal number: ");
-       int decimal = sc.nextInt();
+       int num = sc.nextInt();
 
-    //    int num = decimal / 2
-       sc.close(); // Close the scanner to prevent resource leak
+       int quot = num % 2;
+
+       for(num = num; num > 0; num = num / 2) {
+           quot = num % 2;
+           System.out.print(quot);
+       }
+       
+       System.out.println(" Binary form of " + num + " is:" + quot);
+       sc.close(); 
    } 
 }
